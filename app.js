@@ -86,6 +86,24 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 
+function animateCounter(stat) {
+    const target = parseInt(stat.getAttribute('data-target'));
+    const increment = target / 200;
+    let current = 0;
+
+    const updateCount = () => {
+        if (current < target) {
+            current += increment;
+            stat.textContent = Math.ceil(current);
+            requestAnimationFrame(updateCount);
+        } else {
+            stat.textContent = target;
+        }
+    };
+
+    updateCount();
+}
+
     menuToggle.addEventListener('click', () => {
         navList.classList.toggle('show');
     });
