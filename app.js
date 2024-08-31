@@ -34,6 +34,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
+        alert('Application sent successfully! We\'ll be in touch soon.');
+        contactForm.reset();
+    });
+
+    menuToggle.addEventListener('click', () => {
+        navList.style.display = navList.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
         alert('Message sent successfully!');
         contactForm.reset();
     });
