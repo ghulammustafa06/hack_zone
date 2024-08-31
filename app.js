@@ -7,21 +7,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
 
     const events = [
-        { title: 'Intro to Machine Learning', date: '2024-09-15', time: '15:00' },
-        { title: 'Web Dev Workshop', date: '2024-09-22', time: '14:30' },
-        { title: 'Hackathon Prep', date: '2024-09-29', time: '16:00' }
+        {
+            title: 'Intro to Machine Learning',
+            date: '2024-09-15',
+            time: '15:00',
+            description: 'Dive into the basics of machine learning algorithms and their applications.',
+            image: 'ml_workshop.jpg'
+        },
+        {
+            title: 'Web Dev Workshop',
+            date: '2024-09-22',
+            time: '14:30',
+            description: 'Learn modern web development techniques using the latest frameworks and tools.',
+            image: 'web_dev_workshop.jpg'
+        },
+        {
+            title: 'Hackathon Prep',
+            date: '2024-09-29',
+            time: '16:00',
+            description: 'Get ready for upcoming hackathons with tips, tricks, and team-building exercises.',
+            image: 'hackathon_prep.jpg'
+        }
     ];
 
-    events.forEach(event => {
-        const eventItem = document.createElement('div');
-        eventItem.classList.add('event-item');
-        eventItem.innerHTML = `
-            <h3>${event.title}</h3>
-            <p><i class="fas fa-calendar"></i> ${event.date}</p>
-            <p><i class="fas fa-clock"></i> ${event.time}</p>
-        `;
-        eventList.appendChild(eventItem);
-    });
 
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
