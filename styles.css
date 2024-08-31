@@ -647,4 +647,123 @@ footer {
     .menu-toggle {
         display: block;
     }
+
+    .cta-button {
+        margin-top: 2rem;
+    }
+
+    .footer-content {
+        font-size: 0.9rem;
+    }
+
+    .social-links {
+        margin-bottom: 1rem;
+    }
+
+    .social-links a {
+        font-size: 1.2rem;
+    }
+
+    .carousel-controls {
+        display: flex;
+        justify-content: center;
+    }
+
+    .carousel-controls button {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .section-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .about-section {
+        padding: 4rem 0;
+    }
+
+    .about-header {
+        margin-bottom: 2rem;
+    }
+
+    .about-text p {
+        font-size: 0.5rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.5rem;
+    }
+
+    .feature-card h3 {
+        font-size: 1rem;
+    }
+
+    .feature-card p {
+        font-size: 0.6rem;
+    }
+
+    .testimonial-section h3 {
+        font-size: 1rem;
+    }
+
+    .testimonial-item p {
+        font-size: 0.6rem;
+    }
+
+    .testimonial-author {
+        font-size: 1rem;
+    }
+
+    .event-date, .event-time {
+        font-size: 0.6rem;
+    }
+
+    .event-description {
+        font-size: 0.6rem;
+    }
+
+    .project-card h3 {
+        font-size: 1rem;
+    }
+
+    .project-card p {
+        font-size: 0.6rem;
+    }
+
+    form {
+        max-width: 100%;
+    }
+
+    input, textarea, button {
+        padding: 0.4rem;
+    }
+
+    .footer-content {
+        font-size: 0.6rem;
+    }
+
+    .social-links a {
+        font-size: 0.5rem;
+    }
+
+    .carousel-controls button {
+        font-size: 0.5rem;
+    }
 }
