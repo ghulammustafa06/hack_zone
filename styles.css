@@ -314,3 +314,29 @@ footer {
     color: var(--secondary-color);
     transform: translateY(-3px);
 }
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        padding: 1rem 0;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+}

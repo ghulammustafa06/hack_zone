@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hack Zone - Tech Enthusiasts Club</title>
+    <title>Hack Zone</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -40,15 +41,51 @@
         </section>
 
         <section id="about">
-            <h2>About Us</h2>
+            <h2 class="section-title">About Us</h2>
             <div class="about-content">
-                <p>Hack Zone is a vibrant community of tech enthusiasts, coders, and innovators. We're dedicated to exploring the frontiers of computer science and fostering a culture of continuous learning and creativity.</p>
-                <ul class="feature-list">
-                    <li><i class="fas fa-laptop-code"></i> Weekly Coding Sessions</li>
-                    <li><i class="fas fa-project-diagram"></i> Collaborative Projects</li>
-                    <li><i class="fas fa-chalkboard-teacher"></i> Tech Talks and Workshops</li>
-                    <li><i class="fas fa-trophy"></i> Hackathon Participation</li>
-                </ul>
+                <div class="about-text">
+                    <p class="lead-text">Hack Zone is a vibrant community of tech enthusiasts, coders, and innovators.</p>
+                    <p>We're dedicated to exploring the frontiers of computer science and fostering a culture of continuous learning and creativity. Our mission is to empower students with the skills and knowledge needed to thrive in the digital age.</p>
+                </div>
+                <div class="feature-list-container">
+                    <h3 class="feature-title">What We Offer</h3>
+                    <ul class="feature-list">
+                        <li>
+                            <i class="fas fa-laptop-code"></i>
+                            <div>
+                                <h4>Weekly Coding Sessions</h4>
+                                <p>Hands-on programming experiences across various languages and frameworks.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-project-diagram"></i>
+                            <div>
+                                <h4>Collaborative Projects</h4>
+                                <p>Work on real-world projects to build your portfolio and teamwork skills.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            <div>
+                                <h4>Tech Talks and Workshops</h4>
+                                <p>Learn from industry experts and stay updated with the latest tech trends.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-trophy"></i>
+                            <div>
+                                <h4>Hackathon Participation</h4>
+                                <p>Represent our school in national and international coding competitions.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="events">
+            <h2 class="section-title">Upcoming Events</h2>
+            <div class="event-list">
             </div>
         </section>
 
@@ -88,6 +125,8 @@
                 <button type="submit">Send Application</button>
             </form>
         </section>
+    
+    
     </main>
 
     <footer>
@@ -101,8 +140,6 @@
             <p>&copy; 2024 Hack Zone. Innovate. Create. Dominate.</p>
         </div>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
-
