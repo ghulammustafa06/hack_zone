@@ -30,6 +30,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
+    events.forEach(event => {
+        const eventItem = document.createElement('div');
+        eventItem.classList.add('event-item');
+        eventItem.innerHTML = `
+            <div class="event-image" style="background-image: url(${event.image});"></div>
+            <div class="event-content">
+                <h3 class="event-title">${event.title}</h3>
+                <p class="event-date"><i class="fas fa-calendar"></i> ${event.date}</p>
+                <p class="event-time"><i class="fas fa-clock"></i> ${event.time}</p>
+                <p class="event-description">${event.description}</p>
+            </div>
+        `;
+        eventList.appendChild(eventItem);
+    });
+
 
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
