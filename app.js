@@ -118,23 +118,51 @@ function animateCounter(stat) {
         });
     });
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+        let currentTestimonial = 0;
+        const testimonials = document.querySelector('.testimonial-carousel');
+        
+        if (testimonials) {
+            const testimonialItems = testimonials.querySelectorAll('.testimonial-item');
+    
+            function showTestimonial(index) {
+                testimonialItems.forEach((item, i) => {
+                    item.style.display = i === index ? 'block' : 'none';
+                });
             }
-        });
-    }, { threshold: 0.1 });
+    
+            function nextTestimonial() {
+                currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
+                showTestimonial(currentTestimonial);
+            }
+    
+            function prevTestimonial() {
+                currentTestimonial = (currentTestimonial - 1 + testimonialItems.length) % testimonialItems.length;
+                showTestimonial(currentTestimonial);
+            }
+    
+            showTestimonial(currentTestimonial);
+            
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            
+            if (prevBtn) prevBtn.addEventListener('click', prevTestimonial);
+            if (nextBtn) nextBtn.addEventListener('click', nextTestimonial);
+        }
 
-    sections.forEach(section => {
-        observer.observe(section);
+    populateEvents();
+    contactForm.addEventListener('submit', handleFormSubmit);
+    menuToggle.addEventListener('click', toggleMobileMenu);
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', smoothScroll);
     });
+    window.addEventListener('scroll', handleHeaderScroll);
+    sections.forEach(section => observer.observe(section));
+    document.querySelectorAll('.stat-number').forEach(animateCounter);
+    document.querySelectorAll('.feature-card').forEach(card => {
+        card.addEventListener('mouseenter', () => handleFeatureCardHover(card, true));
+        card.addEventListener('mouseleave', () => handleFeatureCardHover(card, false));
+    });
+    showTestimonial(currentTestimonial);
+    document.querySelector('.prev-btn').addEventListener('click', prevTestimonial);
+    document.querySelector('.next-btn').addEventListener('click', nextTestimonial);
 });
