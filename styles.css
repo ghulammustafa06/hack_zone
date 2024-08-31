@@ -1,13 +1,14 @@
 :root {
-    --primary-color: #3498db;
-    --secondary-color: #2c3e50;
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
     --accent-color: #e74c3c;
     --text-color: #333;
     --bg-color: #f4f4f4;
+    --card-bg: #ffffff;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-color);
@@ -19,6 +20,9 @@ header {
     background-color: var(--primary-color);
     color: white;
     padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
 }
 
 nav {
@@ -33,6 +37,13 @@ nav {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    margin-right: 0.5rem;
+    color: var(--secondary-color);
 }
 
 nav ul {
@@ -51,49 +62,51 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: var(--accent-color);
+    color: var(--secondary-color);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+    padding-top: 5rem;
 }
 
 section {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
 h1, h2 {
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
-form {
+.hero {
     display: flex;
-    flex-direction: column;
-    max-width: 500px;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80vh;
 }
 
-input, textarea, button {
+.hero-content {
+    flex: 1;
+}
+
+.hero h1 {
+    font-size: 3rem;
     margin-bottom: 1rem;
-    padding: 0.5rem;
 }
 
-button {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
 }
 
-button:hover {
-    background-color: var(--secondary-color);
-}
-
-footer {
-    background-color: var(--secondary-color);
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
+.highlight {
+    color: var(--secondary-color);
 }
