@@ -23,6 +23,12 @@ header {
     position: fixed;
     width: 100%;
     z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+header.scrolled {
+    background-color: rgba(44, 62, 80, 0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 nav {
@@ -41,9 +47,9 @@ nav {
     align-items: center;
 }
 
-.logo i {
+.logo img {
+    height: 40px;
     margin-right: 0.5rem;
-    color: var(--secondary-color);
 }
 
 nav ul {
@@ -80,6 +86,14 @@ main {
 
 section {
     margin-bottom: 4rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 h1, h2 {
@@ -98,13 +112,27 @@ h1, h2 {
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 1rem;
+    animation: fadeInUp 1s ease;
 }
 
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
+    animation: fadeInUp 1s ease 0.2s;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .highlight {
@@ -118,11 +146,14 @@ h1, h2 {
     padding: 0.8rem 2rem;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: fadeInUp 1s ease 0.4s;
+    animation-fill-mode: both;
 }
 
 .cta-button:hover {
     background-color: var(--primary-color);
+    transform: translateY(-3px);
 }
 
 .hero-image {
@@ -133,6 +164,12 @@ h1, h2 {
 .hero-image img {
     max-width: 100%;
     height: auto;
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
 }
 
 .about-content {
@@ -154,11 +191,14 @@ h1, h2 {
 
 .feature-list li {
     margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
 }
 
 .feature-list i {
     color: var(--secondary-color);
     margin-right: 0.5rem;
+    font-size: 1.2rem;
 }
 
 .event-list {
@@ -172,11 +212,12 @@ h1, h2 {
     padding: 1.5rem;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .event-item:hover {
     transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .project-grid {
@@ -190,20 +231,27 @@ h1, h2 {
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .project-card img {
     width: 100%;
-    height: auto;
+    height: 200px;
+    object-fit: cover;
 }
 
 .project-card h3, .project-card p {
     padding: 0 1rem;
+}
+
+.project-card h3 {
+    margin-top: 1rem;
+    color: var(--primary-color);
 }
 
 form {
@@ -218,6 +266,12 @@ input, textarea, button {
     padding: 0.8rem;
     border: 1px solid #ddd;
     border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--secondary-color);
+    outline: none;
 }
 
 button {
@@ -225,11 +279,12 @@ button {
     color: white;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
     background-color: var(--primary-color);
+    transform: translateY(-3px);
 }
 
 footer {
@@ -252,9 +307,10 @@ footer {
     color: white;
     font-size: 1.5rem;
     margin: 0 0.5rem;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-links a:hover {
     color: var(--secondary-color);
+    transform: translateY(-3px);
 }
