@@ -3,32 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hack Zone</title>
+    <title>Hack Zone - Tech Enthusiasts Club</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">Hack Zone</div>
+            <div class="logo">
+                <img src="logo.png" alt="">
+                <span>Hack Zone</span>
+            </div>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#events">Events</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </nav>
     </header>
 
     <main>
-        <section id="home">
-            <h1>Welcome to the Hack Zone</h1>
-            <p>Discover, Learn, and Grow Together</p>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1><span class="highlight">Hack</span> Zone</h1>
+                <p>We are a passionate group of students dedicated to technology</p>
+                <a href="#about" class="cta-button">Explore</a>
+            </div>
+            <div class="hero-image">
+                <img src="coding_illustration.png" alt="Coding illustration">
+            </div>
         </section>
 
         <section id="about">
             <h2>About Us</h2>
-            <p>We are a passionate group of students dedicated to technology</p>
+            <div class="about-content">
+                <p>Hack Zone is a vibrant community of tech enthusiasts, coders, and innovators. We're dedicated to exploring the frontiers of computer science and fostering a culture of continuous learning and creativity.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-laptop-code"></i> Weekly Coding Sessions</li>
+                    <li><i class="fas fa-project-diagram"></i> Collaborative Projects</li>
+                    <li><i class="fas fa-chalkboard-teacher"></i> Tech Talks and Workshops</li>
+                    <li><i class="fas fa-trophy"></i> Hackathon Participation</li>
+                </ul>
+            </div>
         </section>
 
         <section id="events">
@@ -37,22 +58,51 @@
             </div>
         </section>
 
+        <section id="projects">
+            <h2>Our Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="ai_chatbot.jpg" alt="Project 1">
+                    <h3>AI Chatbot</h3>
+                    <p>A machine learning-powered chatbot for student inquiries.</p>
+                </div>
+                <div class="project-card">
+                    <img src="smart_campus_app.png" alt="Project 2">
+                    <h3>Smart Campus App</h3>
+                    <p>IoT-based app for managing campus resources efficiently.</p>
+                </div>
+                <div class="project-card">
+                    <img src="crypto_tracker.webp" alt="Project 3">
+                    <h3>Crypto Tracker</h3>
+                    <p>Real-time cryptocurrency price and trend analyzer.</p>
+                </div>
+            </div>
+        </section>
+
         <section id="contact">
-            <h2>Contact Us</h2>
+            <h2>Join Us</h2>
             <form id="contact-form">
                 <input type="text" placeholder="Your Name" required>
                 <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
+                <textarea placeholder="Why do you want to join Hack Zone?" required></textarea>
+                <button type="submit">Send Application</button>
             </form>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2021 Hack Zone</p>
-    </footer> 
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+            </div>
+            <p>&copy; 2024 Hack Zone. Innovate. Create. Dominate.</p>
+        </div>
+    </footer>
 
-    <script src="app.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
+
