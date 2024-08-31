@@ -332,59 +332,6 @@ section.visible {
     line-height: 1.5;
 }
 
-@media (max-width: 768px) {
-    .about-content {
-        flex-direction: column;
-    }
-
-    .feature-showcase {
-        grid-template-columns: 1fr;
-    }
-}
-
-.feature-showcase {
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-}
-
-
-.feature-card {
-    background-color: var(--card-bg);
-    border-radius: 10px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
-
-.feature-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-.feature-card i {
-    font-size: 3rem;
-    color: #3498db;
-    margin-bottom: 1rem;
-}
-
-.feature-card h3 {
-    font-family: "DM Serif Text", serif;
-    font-size: 1.4rem;
-    color: #2c3e50;
-    margin-bottom: 1rem;
-}
-
-.feature-card p {
-    font-family: "Playfair Display", serif;
-    font-optical-sizing: auto;
-    font-size: 1rem;
-    color: #7f8c8d;
-    line-height: 1.5;
-}
-
 
 @media (max-width: 768px) {
     .about-content {
@@ -429,68 +376,66 @@ section.visible {
     color: var(--primary-color);
 }
 
+.feature-card p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
 
-.section-title {
-    font-size: 2.5rem;
+.testimonial-section {
+    margin-top: 4rem;
     text-align: center;
-    margin-bottom: 2rem;
-    color: var(--primary-color);
     position: relative;
-    padding-bottom: 0.5rem;
+    z-index: 1;
 }
 
-.about-text {
-    flex: 1;
+.testimonial-section h3 {
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
 }
 
-.lead-text {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
+.testimonial-carousel {
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
-.feature-list-container {
-    flex: 1;
+.testimonial-item {
     background-color: var(--card-bg);
     border-radius: 10px;
     padding: 2rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 1rem;
 }
 
-.feature-title {
-    font-size: 1.5rem;
+.testimonial-item p {
+    font-style: italic;
     margin-bottom: 1rem;
-    color: var(--primary-color);
 }
 
-.feature-list {
-    list-style: none;
-    padding: 0;
-}
-
-.feature-list li {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 1.5rem;
-}
-
-.feature-list i {
+.testimonial-author {
+    font-weight: 600;
     color: var(--secondary-color);
+}
+
+.carousel-controls {
+    margin-top: 1rem;
+}
+
+.carousel-controls button {
+    background: none;
+    border: none;
     font-size: 1.5rem;
-    margin-right: 1rem;
-    margin-top: 0.2rem;
-}
-
-.feature-list h4 {
-    margin: 0 0 0.5rem 0;
-    font-size: 1.1rem;
     color: var(--primary-color);
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
 }
 
-.feature-list p {
-    margin: 0;
-    font-size: 0.9rem;
+.carousel-controls button:hover {
+    color: var(--secondary-color);
 }
 
 .event-list {
@@ -523,6 +468,7 @@ section.visible {
 }
 
 .event-title {
+    font-family: "DM Serif Text", serif;
     font-size: 1.2rem;
     margin: 0 0 0.5rem 0;
     color: var(--primary-color);
@@ -541,10 +487,10 @@ section.visible {
 }
 
 .event-description {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
     font-size: 0.9rem;
     margin-top: 1rem;
-
-
 }
 
 .project-grid {
@@ -572,8 +518,16 @@ section.visible {
     object-fit: cover;
 }
 
-.project-card h3, .project-card p {
+.project-card h3 {
+    font-family: DM Serif Text, serif;
     padding: 0 1rem;
+}
+
+.project-card p {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    padding: 0 1rem;
+    margin-bottom: 1rem;
 }
 
 .project-card h3 {
@@ -621,6 +575,8 @@ footer {
 }
 
 .footer-content {
+    font-family: "Baskervville SC", serif;
+    font-weight: 400;
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
@@ -643,31 +599,21 @@ footer {
 }
 
 @media (max-width: 768px) {
-    nav ul {
-        display: none;
+    .about-content {
         flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--primary-color);
-        padding: 1rem 0;
     }
 
-    nav ul.show {
-        display: flex;
+    .feature-showcase {
+        grid-template-columns: 1fr;
     }
 
-    nav ul li {
-        margin: 0.5rem 0;
+    .stats-container {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .menu-toggle {
-        display: block;
-    }
-
-    .feature-list-container {
-        margin-top: 2rem;
+    .stat-item {
+        margin-bottom: 1rem;
     }
 
     .hero {
@@ -675,17 +621,30 @@ footer {
         text-align: center;
     }
 
-    .hero-content, .hero-image {
-        flex: none;
+    .hero-image {
+        margin-top: 2rem;
     }
 
-    .about-content {
+    nav ul {
+        display: none;
+    }
+
+    nav ul.show {
+        display: flex;
         flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--primary-color);
+        padding: 1rem;
     }
 
-    .about-content p {
-        margin-right: 0;
-        margin-bottom: 1rem;
+    nav ul.show li {
+        margin: 0.5rem 0;
     }
 
+    .menu-toggle {
+        display: block;
+    }
 }
